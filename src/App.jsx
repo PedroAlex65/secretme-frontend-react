@@ -30,7 +30,7 @@ const handleSubmit = async (e) => {
     } else {
         await axios
             // ⚠️ CORREÇÃO 1: Usar o endpoint correto /usuario
-            .post(`${API_URL}/usuario, { nick: user.value }`) 
+            .post(`${API_URL}/usuario`, { nick: user.value }) 
             .then((res) => {
                 // ⚠️ CORREÇÃO 2: O Spring retorna o secretToken
                 const secretToken = res.data.secretToken; 
