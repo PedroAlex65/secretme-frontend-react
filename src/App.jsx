@@ -29,22 +29,17 @@ const handleSubmit = async (e) => {
         return; 
     } else {
         await axios
-            // ⚠️ CORREÇÃO 1: Usar o endpoint correto /usuario
-            .post(`${API_URL}/usuario`, { nick: user.value }) 
+            
+            .post(`${API_URL}/usuario`,{nick:user.value}) 
             .then((res) => {
-                // ⚠️ CORREÇÃO 2: O Spring retorna o secretToken
+          
                 const secretToken = res.data.secretToken; 
 
                 if (secretToken) {
                     console.log("Esté é o Token:", secretToken);
-                    
-                    // ⚠️ CORREÇÃO 3: Salva o TOKEN (chave de autorização)
                     localStorage.setItem("secretToken", secretToken);
-                    
-                    // ⚠️ CORREÇÃO 4: Redireciona usando o TOKEN
                     navigate(`/createLink/${secretToken}`);
                 } else {
-                    // Tratar caso onde o Spring não devolve o token (erro interno)
                     throw new Error("API não retornou o token secreto.");
                 }
             })
