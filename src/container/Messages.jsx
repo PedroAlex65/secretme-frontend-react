@@ -22,9 +22,10 @@ const Messages = () => {
 
   const getMessages = async () => {
     if (!secretToken) return;
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
     try {
-      const res = await axios.get(`https://secretme-api-springboot.onrender.com/api/mensagens/recebidas?token=${secretToken}`);
+      const res = await axios.get(`${API_URL}/api/mensagens/recebidas?token=${secretToken}`);
 
       setMessages(res.data);
       setIsLoading(false)

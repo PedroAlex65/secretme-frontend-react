@@ -24,13 +24,13 @@ function App() {
 const handleSubmit = async (e) => {
     e.preventDefault();
     const user = ref.current.nick; 
-
+  const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
     if (!user.value) {
         return; 
     } else {
         await axios
             // ⚠️ CORREÇÃO 1: Usar o endpoint correto /usuario
-            .post("https://secretme-api-springboot.onrender.com/usuario", { nick: user.value }) 
+            .post(`${API_URL}/usuario, { nick: user.value }`) 
             .then((res) => {
                 // ⚠️ CORREÇÃO 2: O Spring retorna o secretToken
                 const secretToken = res.data.secretToken; 

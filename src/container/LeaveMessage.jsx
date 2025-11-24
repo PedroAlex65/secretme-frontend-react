@@ -24,9 +24,9 @@ const LeaveMessage = () => {
 
   const handleBtn = async (e) => {
     e.preventDefault();
-
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
     await axios
-      .post(`https://secretme-api-springboot.onrender.com/api/mensagens?token=${token}`, {
+      .post(`${API_URL}/api/mensagens?token=${token}`, {
         message: valueTextArea,
       })
       .then((res) => {
