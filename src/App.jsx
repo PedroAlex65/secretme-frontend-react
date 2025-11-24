@@ -1,30 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import SecretMessages from "./container/SecretMessages.jsx";
-import axios from "axios";
 import { useNavigate, Outlet } from "react-router-dom";
+import axios from "axios";
 function App() {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
-  const [idUser, setIdUser] = useState();
+  
   const ref = useRef();
-
-  const getUsers = async () => {
-    try {
-      const resp = await axios.get("http://localhost:8000");
-      const lastId = resp.data[resp.data.length - 1].id;
-
-      setUsers(resp.data.sort((a, b) => (a.nick > b.nick ? 1 : -1)));
-
-      setIdUser(lastId);
-    } catch (error) {
-      return "";
-    }
-  };
-
   useEffect(() => {
-    getUsers();
 
-    const minhaChave = "id";
+    const minhaChave = "secretToken";
     const valor = localStorage.getItem(minhaChave);
 
     if (valor !== null) {
@@ -33,34 +17,48 @@ function App() {
     }
   }, [navigate]);
 
-  const handleSubmit = async (e) => {
+
+
+
+
+const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = ref.current.nick;
-    getUsers();
+    const user = ref.current.nick; 
+
     if (!user.value) {
-      return "";
+        return; 
     } else {
-      await axios
-        .post("http://localhost:8000", { nick: user.value })
-        .then((res) => {
-          return res;
-        })
-        .catch((res) => {
-          return res;
-        });
+        await axios
+            // ⚠️ CORREÇÃO 1: Usar o endpoint correto /usuario
+            .post("http://localhost:8080/usuario", { nick: user.value }) 
+            .then((res) => {
+                // ⚠️ CORREÇÃO 2: O Spring retorna o secretToken
+                const secretToken = res.data.secretToken; 
 
-      const updatedUsers = await axios.get("http://localhost:8000");
-      const newLastId = updatedUsers.data[updatedUsers.data.length - 1].id;
-
-      if (newLastId > 0) {
-        console.log("Esté é o id: ", newLastId);
-        navigate(`/createLink/${newLastId}`);
-        localStorage.setItem("id", newLastId);
-      }
+                if (secretToken) {
+                    console.log("Esté é o Token:", secretToken);
+                    
+                    // ⚠️ CORREÇÃO 3: Salva o TOKEN (chave de autorização)
+                    localStorage.setItem("secretToken", secretToken);
+                    
+                    // ⚠️ CORREÇÃO 4: Redireciona usando o TOKEN
+                    navigate(`/createLink/${secretToken}`);
+                } else {
+                    // Tratar caso onde o Spring não devolve o token (erro interno)
+                    throw new Error("API não retornou o token secreto.");
+                }
+            })
+            .catch((err) => {
+                console.error("Erro na criação do link:", err);
+                // Tratar erros (ex: nick muito curto)
+            });
     }
+};
 
-    getUsers();
-  };
+
+
+
+
 
   return (
     <div className="">

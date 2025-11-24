@@ -1,36 +1,32 @@
 import React, { useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import Enviar from "../assets/enviar.png";
 // import "./leaveMessage.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
-  Button,
   Container,
-  FieldArea,
-  FieldMessage,
-  SegurarField,
-  TextArea,
 } from "./leaveMessage";
-import ImgEnviar from "../assets/enviar1.png";
 
-import NavBox from "../components/NavBox.jsx";
+import BodySecret from "../components/BodySecret.jsx";
+import AviaoDePapel from "../assets/aviao-de-papel 1.png"
+
+
 
 const LeaveMessage = () => {
-  const params = useParams();
+  const [searchParams] = useSearchParams();
 
   const [valueTextArea, setValueTextArea] = useState("");
 
-  const idUrl = params.idUser;
-  
+  const token = searchParams.get('token');
+
 
   const handleBtn = async (e) => {
     e.preventDefault();
 
     await axios
-      .post("http://localhost:8000/message", {
-        user_id: idUrl,
+      .post(`http://localhost:8080/api/mensagens?token=${token}`, {
         message: valueTextArea,
       })
       .then((res) => {
@@ -43,27 +39,20 @@ const LeaveMessage = () => {
   };
   return (
     <Container className="container">
-      <FieldMessage className="fieldMessage">
-        <NavBox props={Enviar} text="Deixe sua Mensagem" />
-        <SegurarField className="segurar-field">
-          <FieldArea className="field-text">
-            <TextArea
-              onChange={({ target }) => setValueTextArea(target.value)}
-              value={valueTextArea}
-              name="text"
-              id="text"
-              cols="none"
-              rows="none"
-              placeholder="Digite Algo..."
-            />
-            <div className="btn-enviar">
-              <Button onClick={handleBtn}>
-                <img src={ImgEnviar} alt="" />
-              </Button>
-            </div>
-          </FieldArea>
-        </SegurarField>
-      </FieldMessage>
+      <BodySecret>
+        <div>
+          <h1>Envie uma mensagem Secreta para @Pedro</h1>
+          <h2>Ele não saberá quem enviou a mensagem!</h2>
+          <textarea
+            value={valueTextArea}
+            onChange={(e) => setValueTextArea(e.target.value)}
+            name="text"
+            id=""
+            placeholder="Digite sua mensagem aqui..."></textarea>
+          <a onClick={handleBtn}  >Enviar Mensagem <img src={AviaoDePapel} alt="" /></a>
+        </div>
+      </BodySecret>
+
       <ToastContainer />
     </Container>
   );

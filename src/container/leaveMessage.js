@@ -1,90 +1,58 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 90vh;
-  width: 100vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const FieldText = styled.div`
-  width: 800px;
-  height: 320px;
-  background-color: #5e5c8e;
-`;
-
-export const FieldMessage = styled.div`
-  width: 1145px;
-  height: 811px;
-  border: 1px solid #5e5c8e;
-  border-radius: 15px 15px 0 0;
-`;
-
-export const SegurarField = styled.div`
-  width: 100%;
-  height: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const FieldArea = styled.div`
-  width: 800px;
-  height: 340px;
-  background-color: #5e5c8e;
-  gap: 15px;
-  border-radius: 10px;
-  background-color: #fff;
-  border: 1px solid #5e5c8e;
-
-  .btn-enviar {
-    border-top: 1px solid #5e5c8e;
-    position: relative;
-    bottom: -90px;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #fdf9fe;
+div{
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 10px;
-  }
-`;
-
-export const TextArea = styled.textarea`
-  width: 678px;
-  height: 186px;
-  background-color: #86a0ff;
-  border: 1px solid #fff;
-  resize: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 13px 0 0 30px;
-  border-radius: 10px;
-  border: none;
-  background-color: #fff;
-  color: #5e5c8e;
-`;
-
-export const Button = styled.button`
-  background-color: #fff;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  border: 1px solid #fff;
-  align-self: flex-end;
-  font-weight: bold;
-  margin-right: 60px;
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    width: 40px;
-    height: 40px;
-  }
+    align-items: center;
+    flex-direction: column;
+    gap: 20px; 
+h1{
+  margin-top: 80px;
+font-size:16px;
+font-weight: bold;
+}
+h2{
+  font-size: 15px;
+  color: #B4B4B4;
+}
+textarea{
+width:300px;
+height: 130px;
+border-radius: 15px;
+border: 3px solid #B4B4B4;
+padding-left: 10px; 
   
-  &&:active {
-    scale: 0.8;
-    transition: 0.1s ease;
-  }
-`;
+  /* Mantém o padding nos outros lados, se desejar */
+  padding-top: 10px; 
+  padding-right: 10px;
+
+&::placeholder {
+  color: #B4B4B4;
+  font-size: 15px;
+  font-weight: bold;
+ 
+}
+}
+
+a{
+width: 201px;
+    height: 46px;
+    background-color: #9D00FF;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 16px; 
+    font-weight: bold; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 8px;
+    cursor: pointer;
+    
+}
+}
+ `

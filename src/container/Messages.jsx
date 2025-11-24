@@ -1,63 +1,89 @@
 import { useEffect, useState } from "react";
 import ImgMessagem from "../assets/mensagem.png";
-import Copy from "../assets/copy.svg";
-import { Container, Father, MessagesMsg } from "./messages";
+import userMessage from "../assets/usermessagem.png"
+import expandir from "../assets/expandir.png"
+import { Container } from "./messages";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import NavBox from "../components/NavBox.jsx";
+import BodySecret from "../components/BodySecret.jsx";
+
+
+
 const Messages = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
 
-  const parametro = useParams();
-  const getMessages = async () => {
-    try {
-      const res = await axios.get("http://localhost:8000/message");
+  const [searchParams] = useSearchParams();
+  const secretToken = searchParams.get('token');
+  const [isLoading, setIsLoading] = useState(true);
 
-      setMessages(res.data.sort((a, b) => (a.messages > b.messages ? 1 : -1)));
+  const getMessages = async () => {
+    if (!secretToken) return;
+
+    try {
+      const res = await axios.get(`http://localhost:8080/api/mensagens/recebidas?token=${secretToken}`);
+
+      setMessages(res.data);
+      setIsLoading(false)
     } catch (error) {
-      return "";
+      console.error("Erro ao carregar mensagens", error);
+      setIsLoading(false)
+
+      if (error.response && error.response.status >= 400) {
+        toast.error("Token de acesso inválido. Redirecionando...");
+        // Limpa o localStorage e redireciona (perdeu a sessão)
+        localStorage.removeItem("secretToken");
+        navigate("/");
+      }
     }
   };
 
   useEffect(() => {
     getMessages();
 
-    if (!localStorage.getItem("id")) {
-      navigate("/");
+    if (secretToken) {
+      getMessages()
+    }else{
+      const savedToken = localStorage.getItem("secretToken")
+      if(savedToken){
+        navigate(`/messages?token=${savedToken}`)
+      }else{
+        navigate("/")
+      }
     }
-  }, []);
+  }, [secretToken, navigate]);
 
   const notify = () => toast("Mensagem Copiada");
 
-  const idUrl = Number(parametro.idUser);
+
 
   return (
-    <Father className="container">
-      <Container className="conteudos">
-        <NavBox props={ImgMessagem} text="Mensagens" />
 
-        <MessagesMsg className="segura">
-          <ul>
-            {messages
-              .filter((item) => {
-                return item.user_id == idUrl;
-              })
-              .map((item, i) => {
-                return (
-                  <li onClick={notify} key={i}>
-                    {item.message} <img src={Copy} alt="" />
-                  </li>
-                );
-              })}
-          </ul>
-        </MessagesMsg>
-      </Container>
-      <ToastContainer />
-    </Father>
+    <Container className="conteudos">
+            <BodySecret>
+                <ul>
+                    {messages.length === 0 ? (
+                        <p>Você ainda não recebeu mensagens secretas.</p>
+                    ) : (
+                        messages.map((item, i) => (
+                            <div className="fieldMessage" key={i}>
+                                <img src={userMessage} alt="" />
+                                <div className="container-li">
+                                    {/* ⚠️ O campo correto é item.mensagem (ou item.message, se corrigiu o DTO/Entidade) */}
+                                    <li>{item.mensagem}</li> 
+                                </div>
+                                <img src={expandir} alt="" className="imagem-expandir" />
+                            </div>
+                        ))
+                    )}
+                </ul>
+            </BodySecret>
+            <ToastContainer />
+        </Container>
+
   );
 };
 

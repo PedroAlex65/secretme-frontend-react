@@ -1,298 +1,109 @@
 import styled from "styled-components";
-
 import Instagram from "../assets/instagram.png";
-
-export const Container_Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 1150px;
-  height: 800px;
-  border: 2px solid #5e5c8e;
-  border-radius: 15px 15px 0 0;
-  margin: 0 auto;
-  background-color: #fdf9fe;
-
-  @media (max-width: 1830px) {
-    width: 750px;
-    height: 550px;
-  }
-  @media (max-width: 1280px) {
-    width: 800px;
-    height: 600px;
-  }
-  @media (max-width: 885px) {
-    width: 700px;
-  }
-  @media (max-width: 765px) {
-    width: 700px;
-    height: 700px;
-  }
-
-  @media (max-width: 700px) {
-    width: 600px;
-    height: 600px;
-  }
-  @media (max-width: 500px) {
-    width: 400px;
-    height: 600px;
-  }
-  @media (max-width: 390px) {
-    width: 350px;
-    height: 500px;
-  }
-`;
 
 export const Container = styled.div`
   display: flex;
-  height: 90vh;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+ 
+  margin: 0 auto;
+  background-color: #fdf9fe;
 
-  .information-box {
-    width: 418px;
-    height: 479px;
-    border: 1px solid #5e5c8e;
-    border-radius: 10px;
+
+  div {
+  
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 15px;
-    margin: auto;
-    background-color: #fff;
+    gap: 20px; /* Reduzi o gap para 15px para ficarem mais próximos, como na imagem */
 
-    @media (max-width: 1830px) {
-      width: 380px;
-      height: 420px;
-    }
 
-    @media (max-width: 500px) {
-      width: 350px;
-      height: 450px;
-      gap: 15px;
-    }
-    @media (max-width: 390px) {
-      gap: 8px;
-      width: 320px;
-      height: 380px;
-    }
 
-    h1 {
-      color: #000;
-      font-size: 15px;
-      font-weight: 500;
-      max-width: 380px;
-
-      @media (max-width: 1830px) {
-        text-align: center;
-      }
-
-      @media (max-width: 500px) {
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        font-size: 13px;
-      }
-    }
-    input {
-      width: 380px;
-      height: 40px;
-      border: 2px solid #5e5c8e;
-      color: #6c757d;
-      font-size: 15px;
-      font-weight: 500;
-      text-align: center;
-
-      @media (max-width: 1830px) {
-        width: 350px;
-      }
-
-      @media (max-width: 500px) {
-        width: 280px;
-        height: 40px;
-        font-size: 13px;
-      }
-    }
-    button {
-      background-repeat: no-repeat;
-      background-color: #6c757d;
-      border: none;
-      width: 310px;
-      height: 45px;
-      border-radius: 50px;
-      text-align: center;
-      border: 1px solid #000;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 500;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      &:hover {
-        opacity: 0.9;
-        transition: 0.5s ease;
-      }
-      &:active {
-        scale: 0.9.9;
-      }
-
-      @media (max-width: 1830px) {
-        width: 280px;
-      }
-
-      @media (max-width: 500px) {
-        width: 250px;
-        height: 45px;
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        width: 220px;
-        font-size: 13px;
-      }
-    }
-
-    :root {
-      --yellow: #f9dc64;
-      --orange: #ff553e;
-      --purple: #b5008e;
-
-      --blue: #3023ae;
-      --blue-alpha: #3023ae1f;
-    }
-
-    .instagram {
-      background-image: url(${Instagram});
-      background-repeat: no-repeat;
-      text-align: center;
-      color: #fff;
-      font-size: 20px;
+    h1{
+      margin-top: 5px;
       font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 310px;
-      height: 45px;
-      border-radius: 50px;
-      text-align: center;
-      background-image: radial-gradient(
-        circle at bottom right,
-        var(--yellow),
-        var(--orange),
-        var(--purple)
-      );
-
-      @media (max-width: 1830px) {
-        width: 280px;
-      }
-
-      @media (max-width: 500px) {
-        width: 250px;
-        height: 45px;
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        width: 220px;
-        font-size: 13px;
-      }
+      font-size: 35px;
     }
-
-    .whatsapp {
-      background-repeat: no-repeat;
-      text-align: center;
-      background-color: #39e11d;
-      width: 380px;
-      height: 40px;
-      color: #fff;
+    h2{
       font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 310px;
-      height: 45px;
-      border-radius: 50px;
-      text-align: center;
-
-      @media (max-width: 1830px) {
-        width: 280px;
-      }
-
-      @media (max-width: 500px) {
-        width: 250px;
-        height: 45px;
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        width: 220px;
-        font-size: 13px;
-      }
+      color: #B4B4B4;
     }
 
-    .facebook {
-      background-repeat: no-repeat;
-      text-align: center;
-      background-color: #4950f3;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 310px;
-      height: 45px;
-      border-radius: 50px;
-      text-align: center;
-
-      @media (max-width: 1830px) {
-        width: 280px;
-      }
-
-      @media (max-width: 500px) {
-        width: 250px;
-        height: 45px;
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        width: 220px;
-        font-size: 13px;
-      }
-    }
-
-    .check {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 310px;
-      height: 45px;
-      border-radius: 50px;
-      background-color: #6c757d;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-
-      @media (max-width: 1830px) {
-        width: 280px;
-      }
-
-      @media (max-width: 500px) {
-        width: 250px;
-        height: 45px;
-        font-size: 15px;
-      }
-
-      @media (max-width: 390px) {
-        width: 220px;
-        font-size: 13px;
-      }
-    }
+    button{
+       width: 400px;
+    height: 60px; 
+    border-radius: 15px;
+    border: none;
+    background-color: #9D00FF;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  
+  
   }
+
+
+
+
+
+
+/* Estilo para os Botões/Links de Ação */
+a {
+  display: flex; 
+    
+    /* MUDANÇA CRÍTICA: Alinha o conteúdo (ícone + texto) no início do contêiner */
+    justify-content: flex-start; 
+    
+    /* Mantém a centralização vertical */
+    align-items: center; 
+    
+    /* Ajustes de Recuo: Aumenta o padding esquerdo para criar o recuo da margem */
+    padding: 0 20px 0 35px; 
+    /* Ordem: topo, direita, baixo, esquerda */
+
+    /* SEU CÓDIGO ORIGINAL ABAIXO */
+    width: 400px;
+    height: 60px; 
+    background-color: #B2B2B2;
+    border-radius: 15px;
+    font-size: 18px; 
+    color: #fff; 
+    text-decoration: none;
+    gap: 15px;
+}
+
+/* Estilo para os Ícones */
+a img {
+  
+    width: 30px;
+    height: 30px;
+    /* Adiciona um espaçamento à direita do ícone para separá-lo do texto */
+    margin-right: 15px; 
+}
+
+  }
+
+.copyLink{
+  background-color: #9D00FF;
+  transition: all 0.1s; /* Transição suave para o clique */
+    
+}
+
+
+
+/* Estilo Hover (Opcional, mas recomendado) */
+.copyLink:hover {
+  background-color: #7d24b6; 
+}
+
+/* Estilo Active (O EFEITO DE CLIQUE) */
+.copyLink:active {
+  background-color: #6a1b9a; /* Mantém a cor ou escurece levemente */
+  /* Remove a sombra para que o botão "afunde" */
+  box-shadow: 0 0 0 #54147c;
+  /* Move o botão para baixo para simular o pressionamento */
+  transform: translateY(5px); 
+}
 `;
+

@@ -1,5 +1,5 @@
 import {
-  ContainerUser,
+  
   Texts,
   IputsTexts,
   InputCheckBox,
@@ -12,12 +12,12 @@ function SecretMessages({ handleSubmit, userRef }) {
   return (
     <ContainerFather>
       <Container>
-        <NavBox props={User} text="Login" />
+        <NavBox props={User} text="Login" /> 
         <section>
-          <ContainerUser>
+          <div className="divisao">
             <Texts className="texts">
               <h1>
-                Mensagens Secretas <br /> 😍
+                Mensagens Secretas <br />           😍
               </h1>
               <h2>
                 Obtenha feedback anônimo de seus amigos, colegas de trabalho e
@@ -59,7 +59,7 @@ function SecretMessages({ handleSubmit, userRef }) {
               </InputCheckBox>
             </IputsTexts>
             {/* form 2*/}
-          </ContainerUser>
+          </div>
         </section>
       </Container>
     </ContainerFather>
