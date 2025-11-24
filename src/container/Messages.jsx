@@ -24,7 +24,7 @@ const Messages = () => {
     if (!secretToken) return;
 
     try {
-      const res = await axios.get(`http://localhost:8080/api/mensagens/recebidas?token=${secretToken}`);
+      const res = await axios.get(`https://secretme-api-springboot.onrender.com/api/mensagens/recebidas?token=${secretToken}`);
 
       setMessages(res.data);
       setIsLoading(false)

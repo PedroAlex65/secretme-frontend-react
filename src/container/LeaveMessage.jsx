@@ -26,7 +26,7 @@ const LeaveMessage = () => {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:8080/api/mensagens?token=${token}`, {
+      .post(`https://secretme-api-springboot.onrender.com/api/mensagens?token=${token}`, {
         message: valueTextArea,
       })
       .then((res) => {
