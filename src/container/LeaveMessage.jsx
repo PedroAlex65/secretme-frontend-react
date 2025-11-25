@@ -50,6 +50,14 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
             id=""
             placeholder="Digite sua mensagem aqui..."></textarea>
           <a onClick={handleBtn}  >Enviar Mensagem <img src={AviaoDePapel} alt="" /></a>
+               <a
+                className="criarLink"
+                  href="/"
+                  style= {{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
+                // Quando o dono do link clica, ele volta para a tela inicial
+                >
+                  Quer criar outro link? Volte para a página inicial.
+                </a>
         </div>
       </BodySecret>
 

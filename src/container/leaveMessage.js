@@ -11,6 +11,40 @@ div{
     align-items: center;
     flex-direction: column;
     gap: 20px; 
+
+    .criarLink {
+    /* Aparência Principal: Cor de destaque e tamanho */
+    width: 400px; 
+    height: 60px;
+    background-color: #6C5CE7; /* Cor roxa principal */
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 60px; /* Centraliza o texto verticalmente se for um <a> */
+    padding: 0 15px; /* Adiciona padding interno */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+    /* Estilo para garantir que o texto não quebre o layout */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    
+    /* Efeito ao passar o mouse */
+    &:hover {
+        background-color: #5d48ca;
+    }
+
+    /* OTIMIZAÇÃO CRÍTICA PARA MOBILE */
+    @media (max-width: 500px) {
+        width: 95%; /* Usa quase toda a largura da tela */
+        height: 50px;
+        font-size: 14px;
+    }
+}
 h1{
   margin-top: 80px;
 font-size:16px;
