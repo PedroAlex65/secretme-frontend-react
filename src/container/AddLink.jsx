@@ -24,7 +24,8 @@ function AddLinks() {
   }, [tokenCompartilhado, navigate]);
 
   const [inputValue, setInputValue] = useState(
-    `http://localhost:5173/leaveMessage?token=${tokenCompartilhado}`
+    `https://secretme-api-springboot.onrender.com/leaveMessage?token=${tokenCompartilhado}`
+    
   );
 
   function handleBtn() {
