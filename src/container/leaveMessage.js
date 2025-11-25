@@ -5,6 +5,11 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 0 auto;
   background-color: #fdf9fe;
+
+  .criarLink {
+   background-color: none;
+   color: rgb(180, 180, 180);
+}
 div{
     display: flex;
     justify-content: center;
