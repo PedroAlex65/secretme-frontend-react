@@ -11,6 +11,11 @@ export const ContainerFather = styled.div`
   justify-content: center;
   background-color: #F8F9FA; /* Fundo limpo e claro */
   padding: 20px; /* Adiciona padding para telas pequenas */
+
+@media (max-width: 400px) {
+    padding: 0; /* Remove padding lateral em telas muito estreitas */
+  }
+
 `;
 
 // A antiga 'Container' agora é o Header e o corpo de conteúdo
@@ -35,6 +40,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 30px 20px; /* Espaçamento interno generoso */
+
+    @media (max-width: 500px) {
+      padding: 20px 15px;
+    }
   }
 `;
 

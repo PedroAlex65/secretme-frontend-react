@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Instagram from "../assets/instagram.png";
 
 export const Container = styled.div`
   display: flex;
@@ -8,6 +7,11 @@ export const Container = styled.div`
   margin: 0 auto;
   background-color: #fdf9fe;
 
+  @media (max-width: 500px) {
+    width: 100%;
+    /* Remove as margens laterais no celular, ocupe 100% da tela */
+    padding: 0; 
+  }
 
   div {
   
@@ -17,16 +21,29 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 20px; /* Reduzi o gap para 15px para ficarem mais próximos, como na imagem */
 
-
+@media (max-width: 500px) {
+        gap: 15px;
+    }
 
     h1{
       margin-top: 5px;
       font-weight: bold;
       font-size: 35px;
+
+      @media (max-width: 500px) {
+          font-size: 28px;
+          margin-top: 20px; /* Garante um espaçamento no topo */
+      }
     }
     h2{
       font-size: 20px;
       color: #B4B4B4;
+
+      @media (max-width: 500px) {
+          font-size: 16px;
+          padding: 0 10px; /* Adiciona padding lateral para que o texto não toque as bordas */
+          text-align: center;
+      }
     }
 
     button{
@@ -40,7 +57,11 @@ export const Container = styled.div`
     font-weight: bold;
     cursor: pointer;
   
-  
+  @media (max-width: 500px) {
+          width: 95%;
+          height: 50px; /* Diminui um pouco a altura */
+          font-size: 14px;
+      }
   }
 
 
@@ -71,6 +92,13 @@ a {
     color: #fff; 
     text-decoration: none;
     gap: 15px;
+
+    @media (max-width: 500px) {
+          width: 95%;
+          height: 50px; /* Diminui um pouco a altura */
+          padding: 0 15px; /* Ajusta o padding lateral para telas menores */
+          font-size: 16px;
+      }
 }
 
 /* Estilo para os Ícones */

@@ -1,23 +1,37 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-min-height: 100vh; /* Usa 100vh para cobrir a tela toda */
+min-height: 100vh; 
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F8F9FA; /* Fundo limpo e claro */
-  padding: 20px; /* Adiciona padding para telas pequenas */
+  background-color: #F8F9FA; 
+  padding: 20px;
+
+  @media (max-width: 500px) {
+        width: 100%;
+        max-width: 100%;
+        padding: 0; 
+        
+    }
 
   section{
-     display: flex;
-  flex-direction: column;
- width: 500px;
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+    max-width: 500px;
+    width: 90%; 
 
-  /* Removemos a borda e usamos a sombra para profundidade */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
-  border-radius: 12px; /* Borda suave */
-  background-color: #FFFFFF; /* Fundo do card, branco */
- }
+    border-radius: 12px; 
+    background-color: #FFFFFF; 
+    
+    
+    @media (max-width: 500px) {
+      width: 90%; 
+      min-height: auto; 
+      max-width: 90%;
+      border-radius: 12px; 
+    }
+  }
 `

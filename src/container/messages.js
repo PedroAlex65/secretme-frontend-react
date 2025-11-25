@@ -49,17 +49,15 @@ ul {
     list-style: none;
     overflow-y: auto;
   }
-
+@media (max-width: 500px) {
+    width: 100%; /* Ocupa a largura total da tela */
+    padding: 10px; /* Padding menor */
+  }
   
   .fieldMessage {
-    
     display: flex;
     align-items: center;
-    
-   
     justify-content: space-between; 
-    
-   
     width: 450px;
     min-height: 50px;
     padding: 15px 20px;
@@ -68,6 +66,13 @@ ul {
     font-weight: bold;
     box-sizing: border-box;
     color: #4B0082;
+    width: 100%; /* Ocupa toda a largura da UL/Container */
+  max-width: 450px; /* Limite a largura para não ficar muito largo em desktops */
+
+  @media (max-width: 500px) {
+    padding: 10px 15px;
+    min-height: 40px;
+  }
   }
 
   
