@@ -59,15 +59,16 @@ const LeaveMessage = () => {
             name="text"
             id=""
             placeholder="Digite sua mensagem aqui..."></textarea>
-          <a onClick={handleBtn} disabled={isLoading} >
+          <a onClick={handleBtn} disabled={isLoading} type="button" >
             {isLoading ? (
-
               'Enviando...'
             ) : (
+              <>
+                Enviar Mensagem  <img src={AviaoDePapel} alt="" />
+              </>
 
-              'Enviar Mensagem '
             )}
-            <img src={AviaoDePapel} alt="" />
+
           </a>
 
         </div>
