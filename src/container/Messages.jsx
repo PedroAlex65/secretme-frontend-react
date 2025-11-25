@@ -22,7 +22,7 @@ const Messages = () => {
 
   const getMessages = async () => {
     if (!secretToken) return;
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
+    const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
     try {
       const res = await axios.get(`${API_URL}/api/mensagens/recebidas?token=${secretToken}`);
@@ -47,11 +47,11 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
     if (secretToken) {
       getMessages()
-    }else{
+    } else {
       const savedToken = localStorage.getItem("secretToken")
-      if(savedToken){
+      if (savedToken) {
         navigate(`/messages?token=${savedToken}`)
-      }else{
+      } else {
         navigate("/")
       }
     }
@@ -64,26 +64,34 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
   return (
 
     <Container className="conteudos">
-            <BodySecret>
-                <ul>
-                    {messages.length === 0 ? (
-                        <p>Você ainda não recebeu mensagens secretas.</p>
-                    ) : (
-                        messages.map((item, i) => (
-                            <div className="fieldMessage" key={i}>
-                                <img src={userMessage} alt="" />
-                                <div className="container-li">
-                                 
-                                    <li>{item.mensagem}</li> 
-                                </div>
-                                <img src={expandir} alt="" className="imagem-expandir" />
-                            </div>
-                        ))
-                    )}
-                </ul>
-            </BodySecret>
-            <ToastContainer />
-        </Container>
+      <BodySecret>
+        <ul>
+          {messages.length === 0 ? (
+            <p>Você ainda não recebeu mensagens secretas.</p>
+          ) : (
+            messages.map((item, i) => (
+              <div className="fieldMessage" key={i}>
+                <img src={userMessage} alt="" />
+                <div className="container-li">
+
+                  <li>{item.mensagem}</li>
+                </div>
+                <img src={expandir} alt="" className="imagem-expandir" />
+                <a
+                className="criarLink"
+                  href="/"
+                  style= {{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
+                // Quando o dono do link clica, ele volta para a tela inicial
+                >
+                  Quer criar outro link? Volte para a página inicial.
+                </a>
+              </div>
+            ))
+          )}
+        </ul>
+      </BodySecret>
+      <ToastContainer />
+    </Container>
 
   );
 };
