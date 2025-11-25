@@ -10,7 +10,7 @@ import Link from "../assets/link.png";
 import Whats from "../assets/whatsapp.png"
 import Insta from "../assets/instagram.png"
 import MensagensRecebidas from "../assets/bate-papo.png"
-import LinkQuebrado from "../assets/link-quebrado.png"
+
 
 function AddLinks() {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ function AddLinks() {
 
             <button>{inputValue}</button>
 
-            <CopyToClipboard text={inputValue}><a className="copyLink"> <img src={LinkQuebrado} alt="" />Copiar link</a></CopyToClipboard>
+            <CopyToClipboard text={inputValue}><a className="copyLink"> <img src={Link} alt="" />Copiar link</a></CopyToClipboard>
 
             <a><img src={Whats}  alt="" />Compartilhar no WhatsApp</a>
             <a> <img src={Insta} alt="" />Compartilhar no Instagram</a>
