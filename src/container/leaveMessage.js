@@ -14,14 +14,23 @@ div{
     flex-direction: column;
     gap: 20px; 
     text-align: center;
-     a .criarLink {
-   color: red;
-   text-align: center;
-   font-size: 13px;
-   margin-top: 23px;
-   cursor: pointer;
-
-}
+    .criarLink {
+    /* Anula os estilos de fundo e tamanho herdados do 'a' genérico */
+    background-color: transparent; /* Remove o fundo roxo */
+    width: auto; /* Permite que o link tenha o tamanho do seu conteúdo */
+    height: auto;
+    
+    /* Aplica os estilos desejados para este link */
+    color: #6c5ce7; /* Cor que você definiu inline no JSX */
+    text-align: center;
+    font-size: 1em; /* Tamanho que você definiu inline no JSX */
+    margin-top: 23px;
+    cursor: pointer;
+    text-decoration: underline; /* Garante que está sublinhado */
+    
+    /* Remove o display flex para que o texto não fique centralizado como um botão */
+    display: inline; /* ou use 'block' se quiser que ele ocupe toda a largura */
+  }
 }
 h1{
   margin-top: 80px;
