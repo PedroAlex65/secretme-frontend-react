@@ -16,26 +16,36 @@ import AviaoDePapel from "../assets/aviao-de-papel 1.png"
 
 const LeaveMessage = () => {
   const [searchParams] = useSearchParams();
-
   const [valueTextArea, setValueTextArea] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const token = searchParams.get('token');
-
-
   const handleBtn = async (e) => {
     e.preventDefault();
-    const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
-    await axios
-      .post(`${API_URL}/api/mensagens?token=${token}`, {
-        message: valueTextArea,
-      })
-      .then((res) => {
-        setValueTextArea("");
-        toast("Mensagem Enviada");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    if (!valueTextArea || valueTextArea.trim() === "") {
+
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      await axios
+        .post(`http://localhost:8080/api/mensagens?token=${token}`, {
+          "message": valueTextArea,
+        })
+        .then((res) => {
+          setValueTextArea("");
+          toast("Mensagem Enviada");
+        });
+
+    } catch (err) {
+      console.log(err);
+      toast.error("Erro ao enviar mensagem.");
+
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <Container className="container">
@@ -49,14 +59,23 @@ const LeaveMessage = () => {
             name="text"
             id=""
             placeholder="Digite sua mensagem aqui..."></textarea>
-          <a onClick={handleBtn}  >Enviar Mensagem <img src={AviaoDePapel} alt="" /></a>
+          <a onClick={handleBtn} disabled={isLoading} >
+            {isLoading ? (
+
+              'Enviando...'
+            ) : (
+
+              'Enviar Mensagem '
+            )}
+            <img src={AviaoDePapel} alt="" />
+          </a>
 
         </div>
         <a
           className="criarLink"
           href="/"
           style={{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
-    
+
         >
           Quer criar outro link? Volte para a página inicial.
         </a>
