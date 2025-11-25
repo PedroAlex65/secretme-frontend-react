@@ -1,5 +1,5 @@
 import {
-  
+
   Texts,
   IputsTexts,
   InputCheckBox,
@@ -8,11 +8,12 @@ import {
 } from "./secret-Messages";
 import User from "../assets/user.png";
 import NavBox from "../components/NavBox.jsx";
-function SecretMessages({ handleSubmit, userRef }) {
+function SecretMessages({ handleSubmit, userRef, isLoading }) {
+
   return (
     <ContainerFather>
       <Container>
-        <NavBox props={User} text="Login" /> 
+        <NavBox props={User} text="Login" />
         <section>
           <div className="divisao">
             <Texts className="texts">
@@ -32,8 +33,6 @@ function SecretMessages({ handleSubmit, userRef }) {
                 Por favor, permita receber notificações
               </p>
             </Texts>
-
-            {/* form 2*/}
             <IputsTexts
               ref={userRef}
               onSubmit={handleSubmit}
@@ -47,8 +46,12 @@ function SecretMessages({ handleSubmit, userRef }) {
                 name="nick"
                 required
               />
-              <button className="btn" type="submit">
-                Crie seu Link💎
+              <button className="btn" type="submit" disabled={isLoading}>{isLoading ? (
+               
+                <span>Carregando...</span>
+              ) : (
+                'Crie seu Link 💎'
+              )}
               </button>
               <InputCheckBox className="privacy-terms">
                 <label htmlFor="">
@@ -58,7 +61,6 @@ function SecretMessages({ handleSubmit, userRef }) {
                 </label>
               </InputCheckBox>
             </IputsTexts>
-            {/* form 2*/}
           </div>
         </section>
       </Container>
