@@ -13,6 +13,7 @@ div{
     align-items: center;
     flex-direction: column;
     gap: 20px; 
+    text-align: center;
      .criarLink {
    
    color: rgb(180, 180, 180);
