@@ -52,14 +52,14 @@ const LeaveMessage = () => {
           <a onClick={handleBtn}  >Enviar Mensagem <img src={AviaoDePapel} alt="" /></a>
 
         </div>
-        <a
+        <h3
           className="criarLink"
           href="/"
           style={{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
     
         >
           Quer criar outro link? Volte para a página inicial.
-        </a>
+        </h3>
       </BodySecret>
 
       <ToastContainer />

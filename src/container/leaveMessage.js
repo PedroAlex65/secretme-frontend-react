@@ -6,16 +6,17 @@ export const Container = styled.div`
   margin: 0 auto;
   background-color: #fdf9fe;
 
-  .criarLink {
-   background-color: none;
-   color: rgb(180, 180, 180);
-}
+ 
 div{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px; 
+     .criarLink {
+   
+   color: rgb(180, 180, 180);
+}
 h1{
   margin-top: 80px;
 font-size:16px;
