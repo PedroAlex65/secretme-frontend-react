@@ -25,7 +25,6 @@ function AddLinks() {
 
   const [inputValue, setInputValue] = useState(
     `https://secretme-frontend-react.vercel.app/leaveMessage?token=${tokenCompartilhado}`
-    
   );
 
   function handleBtn() {

@@ -8,8 +8,11 @@ export const Header = styled.header`
   background-color: #9D00FF;
   border-radius: 10px 10px 0 0;
   height: 70px;
+  
   @media (max-width: 500px) {
   height: 50px;
+
+  
   }
 
   h3 {

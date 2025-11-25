@@ -1,37 +1,49 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-min-height: 100vh; 
+min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F8F9FA; 
+  background-color: #F8F9FA;
   padding: 20px;
-
-  @media (max-width: 500px) {
-        width: 100%;
-        max-width: 100%;
-        padding: 0; 
-        
-    }
-
   section{
-    display: flex;
+  display: flex;
     flex-direction: column;
-    
-    max-width: 500px;
-    width: 90%; 
 
-    border-radius: 12px; 
-    background-color: #FFFFFF; 
+    width: 100%;
+    max-width: 500px; /* Mantém o tamanho no desktop */
+    min-height: 80vh; /* Altura dinâmica */
+    height: auto;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+  /* Removemos a borda e usamos a sombra para profundidade */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+  border-radius: 12px; /* Borda suave */
+  background-color: #FFFFFF; /* Fundo do card, branco */
+
+    & > * {
+    width: 100%;
+  }
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+@media (max-width: 600px) {
     
-    
-    @media (max-width: 500px) {
-      width: 90%; 
-      min-height: auto; 
-      max-width: 90%;
-      border-radius: 12px; 
+    section {
+      max-width: 100%;
+      width: 100%;
+      min-height: auto;
+      height: auto;
+
+      border-radius: 10px;
     }
   }
+ }
 `

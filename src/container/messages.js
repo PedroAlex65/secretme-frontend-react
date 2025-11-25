@@ -68,7 +68,65 @@ ul {
     font-weight: bold;
     box-sizing: border-box;
     color: #4B0082;
+
+@media (max-width: 500px) {
+
+  /* 1) Ajusta o container principal no mobile */
+  width: 90% !important;
+  height: auto !important;
+  padding: 0 10px;
+
+  /* 2) UL ocupa toda a largura e evita overflow */
+  ul {
+    width: 100%;
+    padding: 0 5px;
+    overflow-x: hidden;
   }
+
+  /* 3) fieldMessage totalmente fluido */
+  .fieldMessage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+  }
+
+  /* 4) Ícone ajustado */
+  .fieldMessage > img {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0; /* evita encolher */
+  }
+
+  /* 5) Container do texto ocupa todo espaço */
+  .container-li {
+    flex: 1;
+    margin-right: 5px;
+  }
+
+  /* 6) Texto quebra linha corretamente */
+  .container-li li {
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: left;
+  }
+
+  /* 7) Ícone "expandir" fica visível e sem quebrar */
+  .imagem-expandir {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0; /* evita estourar a linha */
+  }
+}
+
+///////////////////////////
+}
 
   
   .fieldMessage > img {
@@ -76,7 +134,7 @@ ul {
     height: 30px;
     margin-right: 15px;
   }
-
+ 
   .container-li {
     
     flex-grow: 1; 

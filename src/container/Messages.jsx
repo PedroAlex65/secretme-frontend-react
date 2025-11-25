@@ -73,7 +73,7 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
                             <div className="fieldMessage" key={i}>
                                 <img src={userMessage} alt="" />
                                 <div className="container-li">
-                                    {/* ⚠️ O campo correto é item.mensagem (ou item.message, se corrigiu o DTO/Entidade) */}
+                                 
                                     <li>{item.mensagem}</li> 
                                 </div>
                                 <img src={expandir} alt="" className="imagem-expandir" />
