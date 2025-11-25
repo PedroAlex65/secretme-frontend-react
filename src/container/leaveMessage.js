@@ -75,5 +75,5 @@ width: 201px;
     cursor: pointer;
     
 }
-}
+
  `
