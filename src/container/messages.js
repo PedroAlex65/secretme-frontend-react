@@ -52,9 +52,14 @@ ul {
 
   
   .fieldMessage {
+    
     display: flex;
     align-items: center;
+    
+   
     justify-content: space-between; 
+    
+   
     width: 450px;
     min-height: 50px;
     padding: 15px 20px;
@@ -63,10 +68,6 @@ ul {
     font-weight: bold;
     box-sizing: border-box;
     color: #4B0082;
-    width: 100%; /* Ocupa toda a largura da UL/Container */
-  max-width: 450px; /* Limite a largura para não ficar muito largo em desktops */
-
-
   }
 
   
