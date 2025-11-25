@@ -24,7 +24,7 @@ function AddLinks() {
   }, [tokenCompartilhado, navigate]);
 
   const [inputValue, setInputValue] = useState(
-    `https://secretme-api-springboot.onrender.com/leaveMessage?token=${tokenCompartilhado}`
+    `https://secretme-frontend-react.vercel.app/leaveMessage?token=${tokenCompartilhado}`
     
   );
 
