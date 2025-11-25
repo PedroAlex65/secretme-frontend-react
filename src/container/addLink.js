@@ -93,6 +93,7 @@ a {
     color: #fff; 
     text-decoration: none;
     gap: 15px;
+    cursor: pointer;
 
     @media (max-width: 500px) {
           width: 95%;
