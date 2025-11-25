@@ -22,6 +22,7 @@ export const Container = styled.div`
     gap: 20px; /* Reduzi o gap para 15px para ficarem mais próximos, como na imagem */
 
 @media (max-width: 500px) {
+  padding: 1px;
         gap: 15px;
     }
 
