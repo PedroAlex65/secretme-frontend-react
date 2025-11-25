@@ -15,11 +15,11 @@ div{
     gap: 20px; 
     text-align: center;
      h4 {
-   
    color: red;
    text-align: center;
    font-size: 13px;
    margin-top: 23px;
+   cursor: pointer;
 
 }
 }
