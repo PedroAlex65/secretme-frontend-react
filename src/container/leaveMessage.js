@@ -14,7 +14,14 @@ div{
     flex-direction: column;
     gap: 20px; 
     text-align: center;
+     h4 {
+   
+   color: red;
+   text-align: center;
+   font-size: 13px;
+   margin-top: 23px;
 
+}
 }
 h1{
   margin-top: 80px;
