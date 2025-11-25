@@ -16,10 +16,10 @@ div{
     text-align: center;
      h3 {
    
-   color: rgb(180, 180, 180);
+   color: red;
    text-align: center;
-    font-size: 13px;
-        margin-top: 23px;
+   font-size: 13px;
+   margin-top: 23px;
 
 }
 }
