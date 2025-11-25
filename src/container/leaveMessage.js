@@ -17,6 +17,9 @@ div{
      .criarLink {
    
    color: rgb(180, 180, 180);
+   text-align: center;
+    font-size: 13px;
+}
 }
 h1{
   margin-top: 80px;
