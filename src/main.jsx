@@ -11,11 +11,8 @@ import LeaveMessage from "./container/LeaveMessage.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CreateGlobalStyle />
-
     <BrowserRouter>
-     
       <Routes>
-        
         <Route path="/" element={<App />} />
         <Route path="/createLink/:token" element={<AddLink />} />
         <Route path="/messages" element={<Messages />} />

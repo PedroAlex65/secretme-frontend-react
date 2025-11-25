@@ -4,13 +4,10 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useNavigate, useParams } from "react-router-dom";
 import BodySecret from "../components/BodySecret.jsx";
 import "./links.css";
-//Imagem que eu quero deixarn o NavBox
 import Link from "../assets/link.png";
-
 import Whats from "../assets/whatsapp.png"
 import Insta from "../assets/instagram.png"
 import MensagensRecebidas from "../assets/bate-papo.png"
-
 
 function AddLinks() {
   const navigate = useNavigate();
@@ -26,11 +23,9 @@ function AddLinks() {
   const [inputValue, setInputValue] = useState(
     `https://secretme-frontend-react.vercel.app/leaveMessage?token=${tokenCompartilhado}`
   );
-
   function handleBtn() {
     navigate(`/messages?token=${tokenCompartilhado}`);
   }
-
   return (
     <>
       <Container>
@@ -47,8 +42,6 @@ function AddLinks() {
             <a> <img src={Insta} alt="" />Compartilhar no Instagram</a>
             <a onClick={handleBtn} > <img src={MensagensRecebidas} alt="" />Ver Mensagens Recebidas</a>
           </div>
-
-
         </BodySecret>
 
       </Container>

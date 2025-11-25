@@ -1,14 +1,12 @@
 import React, { useRef, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
-import Enviar from "../assets/enviar.png";
-// import "./leaveMessage.css";
+import {  useSearchParams } from "react-router-dom";
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   Container,
 } from "./leaveMessage";
-
 import BodySecret from "../components/BodySecret.jsx";
 import AviaoDePapel from "../assets/aviao-de-papel 1.png"
 

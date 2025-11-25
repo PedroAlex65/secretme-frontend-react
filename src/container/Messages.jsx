@@ -23,10 +23,8 @@ const Messages = () => {
   const getMessages = async () => {
     if (!secretToken) return;
 const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
-
     try {
       const res = await axios.get(`${API_URL}/api/mensagens/recebidas?token=${secretToken}`);
-
       setMessages(res.data);
       setIsLoading(false)
     } catch (error) {
@@ -35,13 +33,11 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
       if (error.response && error.response.status >= 400) {
         toast.error("Token de acesso inválido. Redirecionando...");
-        // Limpa o localStorage e redireciona (perdeu a sessão)
         localStorage.removeItem("secretToken");
         navigate("/");
       }
     }
   };
-
   useEffect(() => {
     getMessages();
 
@@ -56,11 +52,7 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
       }
     }
   }, [secretToken, navigate]);
-
   const notify = () => toast("Mensagem Copiada");
-
-
-
   return (
 
     <Container className="conteudos">

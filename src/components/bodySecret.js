@@ -11,21 +11,18 @@ min-height: 100vh;
   section{
   display: flex;
     flex-direction: column;
-
     width: 100%;
-    max-width: 500px; /* Mantém o tamanho no desktop */
-    min-height: 80vh; /* Altura dinâmica */
+    max-width: 500px;
+    min-height: 80vh;
     height: auto;
-
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     background-color: #FFFFFF;
     overflow: hidden;
-  /* Removemos a borda e usamos a sombra para profundidade */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
-  border-radius: 12px; /* Borda suave */
-  background-color: #FFFFFF; /* Fundo do card, branco */
 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+  border-radius: 12px; 
+  background-color: #FFFFFF; 
     & > * {
     width: 100%;
   }

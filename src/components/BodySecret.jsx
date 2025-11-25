@@ -2,9 +2,7 @@ import NavBox from "./NavBox.jsx";
 import { Container } from "./bodySecret.js";
 
 const BodySecret = ({children}) => {
-
     return (
-
         <>
             <Container>
                 <section>
@@ -14,7 +12,6 @@ const BodySecret = ({children}) => {
             </Container>
 
         </>
-
     );
 }
 

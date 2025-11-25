@@ -4,8 +4,7 @@ const NavBox = ({props,text}) => {
   return (
     <Header className="conteudos-header">
      <h3> SecretM-me</h3>
-    </Header>
-    
+    </Header>    
   );
 };
 

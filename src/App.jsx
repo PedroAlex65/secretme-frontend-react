@@ -6,7 +6,6 @@ function App() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false); 
   const ref = useRef();
-
   useEffect(() => {
 
     const minhaChave = "secretToken";
@@ -17,11 +16,6 @@ function App() {
       return navigate(`/createLink/${valor}`);
     }
   }, [navigate]);
-
-
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = ref.current.nick;
@@ -36,7 +30,7 @@ function App() {
           const secretToken = res.data.secretToken;
 
           if (secretToken) {
-            console.log("Esté é o Token:", secretToken);
+           
             localStorage.setItem("secretToken", secretToken);
             navigate(`/createLink/${secretToken}`);
           } else {
@@ -55,12 +49,6 @@ function App() {
       setIsLoading(false); 
     }
   };
-
-
-
-
-
-
   return (
     <div className="">
       <SecretMessages userRef={ref} handleSubmit={handleSubmit} isLoading={isLoading} />

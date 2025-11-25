@@ -5,8 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 0 auto;
   background-color: #fdf9fe;
-
- 
 div{
     display: flex;
     justify-content: center;
@@ -15,21 +13,16 @@ div{
     gap: 20px; 
     text-align: center;
     .criarLink {
-    /* Anula os estilos de fundo e tamanho herdados do 'a' genérico */
-    background-color: transparent; /* Remove o fundo roxo */
-    width: auto; /* Permite que o link tenha o tamanho do seu conteúdo */
+    background-color: transparent;
+    width: auto; 
     height: auto;
-    
-    /* Aplica os estilos desejados para este link */
-    color: #6c5ce7; /* Cor que você definiu inline no JSX */
+    color: #6c5ce7;
     text-align: center;
-    font-size: 1em; /* Tamanho que você definiu inline no JSX */
+    font-size: 1em; 
     margin-top: 23px;
     cursor: pointer;
-    text-decoration: underline; /* Garante que está sublinhado */
-    
-    /* Remove o display flex para que o texto não fique centralizado como um botão */
-    display: inline; /* ou use 'block' se quiser que ele ocupe toda a largura */
+    text-decoration: underline;
+    display: inline; 
   }
 }
 h1{
@@ -47,19 +40,14 @@ height: 130px;
 border-radius: 15px;
 border: 3px solid #B4B4B4;
 padding-left: 10px; 
-  
-  /* Mantém o padding nos outros lados, se desejar */
   padding-top: 10px; 
   padding-right: 10px;
-
 &::placeholder {
   color: #B4B4B4;
   font-size: 15px;
   font-weight: bold;
- 
 }
 }
-
 a{
 width: 201px;
     height: 46px;
@@ -72,8 +60,7 @@ width: 201px;
     justify-content: center;
     align-items: center; 
     gap: 8px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
 
  `
