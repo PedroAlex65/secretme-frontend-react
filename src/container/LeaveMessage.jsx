@@ -24,7 +24,7 @@ const LeaveMessage = () => {
 
   const handleBtn = async (e) => {
     e.preventDefault();
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
+    const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
     await axios
       .post(`${API_URL}/api/mensagens?token=${token}`, {
         message: valueTextArea,
@@ -50,15 +50,16 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
             id=""
             placeholder="Digite sua mensagem aqui..."></textarea>
           <a onClick={handleBtn}  >Enviar Mensagem <img src={AviaoDePapel} alt="" /></a>
-               <a
-                className="criarLink"
-                  href="/"
-                  style= {{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
-                // Quando o dono do link clica, ele volta para a tela inicial
-                >
-                  Quer criar outro link? Volte para a página inicial.
-                </a>
+
         </div>
+        <a
+          className="criarLink"
+          href="/"
+          style={{ fontSize: '1em', color: '#6C5CE7', textDecoration: 'underline' }}
+    
+        >
+          Quer criar outro link? Volte para a página inicial.
+        </a>
       </BodySecret>
 
       <ToastContainer />
