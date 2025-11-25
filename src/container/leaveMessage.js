@@ -11,10 +11,6 @@ div{
     align-items: center;
     flex-direction: column;
     gap: 20px; 
-
-    .criarLink {
-color: rgb(180, 180, 180);
-}
 h1{
   margin-top: 80px;
 font-size:16px;
