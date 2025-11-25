@@ -14,7 +14,7 @@ div{
     flex-direction: column;
     gap: 20px; 
     text-align: center;
-     h4 {
+     a .criarLink {
    color: red;
    text-align: center;
    font-size: 13px;
