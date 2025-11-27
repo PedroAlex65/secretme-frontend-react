@@ -1,6 +1,6 @@
 import {  Header, Img } from "./navBox.js";
 
-const NavBox = ({props,text}) => {
+const NavBox = () => {
   return (
     <Header className="conteudos-header">
      <h3> SecretM-me</h3>
