@@ -6,7 +6,7 @@ import {
   ContainerFather,
   Container,
 } from "./secret-Messages";
-import User from "../assets/user.png";
+import User from "../assets/usermessagem.png";
 import NavBox from "../components/NavBox.jsx";
 function SecretMessages({ handleSubmit, userRef, isLoading }) {
 
