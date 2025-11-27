@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ImgMessagem from "../assets/mensagem.png";
+//import ImgMessagem from "../assets/mensagem.png";
 import userMessage from "../assets/usermessagem.png"
 import expandir from "../assets/expandir.png"
 import { Container } from "./messages";
