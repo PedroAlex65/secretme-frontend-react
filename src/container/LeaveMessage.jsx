@@ -10,8 +10,6 @@ import {
 import BodySecret from "../components/BodySecret.jsx";
 import AviaoDePapel from "../assets/aviao-de-papel 1.png"
 
-
-
 const LeaveMessage = () => {
   const [searchParams] = useSearchParams();
   const [valueTextArea, setValueTextArea] = useState("");
@@ -25,24 +23,22 @@ const LeaveMessage = () => {
       if (token) {
         try {
           const response = await axios.get(
-            // Lembre-se que o Controller está em '/usuario/nick'
+      
             `https://secretme-api-springboot.onrender.com/usuario/nick?token=${token}`
           );
-          // O backend retorna apenas a string do nick
+     
           setRecipientNick(response.data);
         } catch (error) {
           console.error("Erro ao buscar nome do destinatário:", error);
-          // Opcional: Redirecionar se o token for inválido
-          // window.location.href = '/error-page';
+         
         }
       } else {
-        // Lida com o caso em que o token está faltando na URL
-        // Exemplo: setRecipientNick('Link Inválido');
+     
       }
     };
 
     fetchRecipientNick();
-  }, [token]); // Executa apenas quando o token mudar ou ao montar
+  }, [token]); 
 
 
 
