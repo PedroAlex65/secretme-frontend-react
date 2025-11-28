@@ -50,6 +50,7 @@ export const HeaderContainer = styled.header`
     font-size: 2em;
     font-weight: 700;
     margin: 100px;
+    text-align:center;
     
   }
 `;
