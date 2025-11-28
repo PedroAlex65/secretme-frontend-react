@@ -80,7 +80,7 @@ return (
   <Container className="container">
     <BodySecret>
       <div>
-        <h1>Envie uma mensagem Secreta para @{recipientNick}</h1>
+        <h1>Envie uma mensagem Secreta para {recipientNick}</h1>
         <h2>Ele não saberá quem enviou a mensagem!</h2>
         <textarea
           value={valueTextArea}
